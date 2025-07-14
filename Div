@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Div Layout with Images and Descriptions</title>
+  <style>
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .box {
+      width: 45%;
+      margin: 10px;
+      padding: 15px;
+      background-color: white;
+      border: 1px solid #ccc;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .box img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .description {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- First div with image -->
+    <div class="box">
+      <img src="https://via.placeholder.com/300x200" alt="Image 1">
+    </div>
+
+    <!-- Second div with description -->
+    <div class="box">
+      <div class="description">
+        <h3>First Description</h3>
+        <p>This is a description related to the first image. It provides more context and details.</p>
+      </div>
+    </div>
+
+    <!-- Third div with image -->
+    <div class="box">
+      <img src="https://via.placeholder.com/300x200" alt="Image 2">
+    </div>
+
+    <!-- Fourth div with description -->
+    <div class="box">
+      <div class="description">
+        <h3>Second Description</h3>
+        <p>This is a description related to the second image. It helps explain the visual content.</p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
