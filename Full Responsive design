@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  justify-content: center;
+}
+
+/* Create four equal columns */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* Responsive layout: 2 columns on tablets */
+@media screen and (max-width: 768px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout: 1 column on mobile */
+@media screen and (max-width: 480px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1>Responsive Image Gallery</h1>
+
+<div class="row"> 
+  <div class="column">
+    <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre">
+    <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest">
+    <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains">
+    <img src="https://www.w3schools.com/css/img_lights.jpg" alt="Lights">
+  </div>
+  <div class="column">
+    <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre">
+    <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest">
+    <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains">
+    <img src="https://www.w3schools.com/css/img_lights.jpg" alt="Lights">
+  </div>  
+  <div class="column">
+    <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre">
+    <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest">
+    <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains">
+    <img src="https://www.w3schools.com/css/img_lights.jpg" alt="Lights">
+  </div>
+  <div class="column">
+    <img src="https://www.w3schools.com/css/img_5terre.jpg" alt="Cinque Terre">
+    <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest">
+    <img src="https://www.w3schools.com/css/img_mountains.jpg" alt="Mountains">
+    <img src="https://www.w3schools.com/css/img_lights.jpg" alt="Lights">
+  </div>
+</div>
+
+</body>
+</html>
