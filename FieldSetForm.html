@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4 Fieldset Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: auto;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+        .gender-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Personal Information Form</h2>
+<form>
+    <!-- General Info -->
+    <fieldset>
+        <legend>General Information</legend>
+        
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob">
+
+        <label>Gender:</label>
+        <div class="gender-options">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+    </fieldset>
+
+    <!-- Address Info -->
+    <fieldset>
+        <legend>Address Information</legend>
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country">
+
+        <label for="state">State/Province:</label>
+        <input type="text" id="state" name="state">
+    </fieldset>
+
+    <!-- Temporary Address -->
+    <fieldset>
+        <legend>Temporary Address</legend>
+        <label for="tempStreet">Street:</label>
+        <input type="text" id="tempStreet" name="tempStreet">
+
+        <label for="tempCity">City:</label>
+        <input type="text" id="tempCity" name="tempCity">
+
+        <label for="tempPostal">Postal Code:</label>
+        <input type="text" id="tempPostal" name="tempPostal">
+    </fieldset>
+
+    <!-- Permanent Address -->
+    <fieldset>
+        <legend>Permanent Address</legend>
+        <label for="permStreet">Street:</label>
+        <input type="text" id="permStreet" name="permStreet">
+
+        <label for="permCity">City:</label>
+        <input type="text" id="permCity" name="permCity">
+
+        <label for="permPostal">Postal Code:</label>
+        <input type="text" id="permPostal" name="permPostal">
+    </fieldset>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

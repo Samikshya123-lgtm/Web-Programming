@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meditate – Find Your Calm</title>
+  <style>
+    :root {
+      --bg: #0f1020;
+      --card: #1a1b2e;
+      --text: #eef1ff;
+      --muted: #c9cbe2;
+      --accent: #8a5cf6;
+      --accent-2: #32d0c3;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: radial-gradient(1200px 800px at 80% -10%, #2a1b56 0%, rgba(42,27,86,0) 50%),
+             radial-gradient(1000px 700px at -10% 110%, #103d3a 0%, rgba(16,61,58,0) 55%), var(--bg); }
+
+    /* Layout */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+    /* Navbar */
+    header { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(160%) blur(8px); background: rgba(15,16,32,0.65); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; gap: 10px; align-items: center; font-weight: 800; letter-spacing: 0.2px; }
+    .logo { width: 32px; height: 32px; border-radius: 10px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); box-shadow: 0 6px 16px rgba(138,92,246,0.35); }
+    nav a { color: var(--text); text-decoration: none; padding: 10px 12px; border-radius: 12px; font-weight: 600; opacity: 0.9; }
+    nav a:hover, nav a:focus { background: rgba(255,255,255,0.06); outline: none; }
+
+    /* Hero */
+    .hero { padding: 96px 0 72px; text-align: center; }
+    .hero h1 { font-size: clamp(32px, 6vw, 56px); margin: 0 0 12px; line-height: 1.05; }
+    .hero p { color: var(--muted); font-size: clamp(16px, 2.6vw, 20px); margin: 0 auto 28px; max-width: 680px; }
+    .cta { display: inline-block; padding: 14px 20px; border-radius: 16px; font-weight: 700; text-decoration: none; background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0c0d1c; box-shadow: 0 12px 26px rgba(138,92,246,0.35); }
+    .cta:focus { outline: 2px solid rgba(255,255,255,0.3); outline-offset: 3px; }
+
+    /* Cards */
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.06); border-radius: 18px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+    .card h3 { margin: 8px 0 6px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); font-size: 15px; }
+
+    /* Sections */
+    section { padding: 72px 0; }
+    section h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 12px; }
+    section p.lead { color: var(--muted); margin: 0 0 24px; max-width: 720px; }
+
+    /* Contact form */
+    form { background: var(--card); border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 22px; box-shadow: 0 14px 36px rgba(0,0,0,0.25); }
+    label { display: block; margin: 12px 0 6px; font-weight: 600; }
+    input, textarea { width: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: var(--text); }
+    input::placeholder, textarea::placeholder { color: #cdd1ffb3; }
+    textarea { min-height: 130px; resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; justify-content: flex-start; margin-top: 14px; }
+    button { cursor: pointer; border: 0; border-radius: 14px; padding: 12px 16px; font-weight: 700; }
+    .btn-primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #0c0d1c; }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid rgba(255,255,255,0.18); }
+    .status { font-size: 14px; color: var(--muted); }
+
+    /* Footer */
+    footer { padding: 40px 0; color: var(--muted); text-align: center; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* Responsive */
+    @media (max-width: 900px) { .grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      .row { grid-template-columns: 1fr; }
+      .nav { height: auto; padding: 10px 0; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Meditate</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero / Home -->
+  <main id="home" class="hero container">
+    <h1>Find your calm, every day.</h1>
+    <p>Simple guided meditations, breathing exercises, and gentle yoga flows designed to reduce stress and improve sleep. Built as a clean, responsive website you can use anywhere.</p>
+    <a class="cta" href="#contact">Start Free – Say Hello</a>
+
+    <div class="grid">
+      <article class="card">
+        <h3>Guided Meditation</h3>
+        <p>5–20 minute sessions to unwind and refocus.</p>
+      </article>
+      <article class="card">
+        <h3>Breathing</h3>
+        <p>Box breathing and calming timers to reset your day.</p>
+      </article>
+      <article class="card">
+        <h3>Mood Check</h3>
+        <p>Track how you feel and see gentle trends over time.</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p class="lead">We’re a tiny team of designers and developers on a mission to make mindfulness approachable. No noise, no ads—just moments of quiet that fit your life.</p>
+      <div class="grid">
+        <div class="card">
+          <h3>Science-led</h3>
+          <p>Our sessions are inspired by CBT, MBSR, and well‑studied breathing techniques.</p>
+        </div>
+        <div class="card">
+          <h3>Accessible</h3>
+          <p>Works on phones, tablets, and desktops. Keyboard and screen‑reader friendly.</p>
+        </div>
+        <div class="card">
+          <h3>Privacy First</h3>
+          <p>We never sell your data. Your practice is yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">Questions, collaboration, or feedback? Send us a note. The form is fully clickable and validates before submitting.</p>
+      <form id="contactForm" novalidate>
+        <div class="row">
+          <div>
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="e.g., Samikshya Timalsina" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          </div>
+        </div>
+        <label for="topic">Topic</label>
+        <input id="topic" name="topic" type="text" placeholder="Partnership, feedback, support…" required />
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Write your message…" required></textarea>
+
+        <div class="actions">
+          <button type="submit" class="btn-primary">Send Message</button>
+          <button type="reset" class="btn-ghost">Clear</button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© <span id="year"></span> Meditate. Be kind to your mind.</div>
+  </footer>
+
+  <script>
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Form validation + demo submit (no backend)
+    const form = document.getElementById('contactForm');
+    const statusEl = document.getElementById('status');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      statusEl.textContent = '';
+
+      // Simple client-side validation
+      const data = new FormData(form);
+      const name = (data.get('name') || '').trim();
+      const email = (data.get('email') || '').trim();
+      const topic = (data.get('topic') || '').trim();
+      const message = (data.get('message') || '').trim();
+
+      if (!name || !email || !topic || !message) {
+        statusEl.textContent = 'Please fill in all fields.';
+        return;
+      }
+      const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!emailOk) {
+        statusEl.textContent = 'Please enter a valid email address.';
+        return;
+      }
+
+      // Simulate async submission
+      statusEl.textContent = 'Sending…';
+      setTimeout(() => {
+        form.reset();
+        statusEl.textContent = 'Thanks! Your message has been sent (demo).';
+      }, 800);
+    });
+  </script>
+</body>
+</html>
